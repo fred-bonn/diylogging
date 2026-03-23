@@ -1,3 +1,3 @@
-module github.com/fred-bonn/diy-logging
+module github.com/fred-bonn/diylogging
 
 go 1.26.1
