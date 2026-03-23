@@ -20,7 +20,7 @@ func LogStart() (chan<- fmt.Stringer, *sync.WaitGroup) {
 	return ch, &wg
 }
 
-func log(ch chan fmt.Stringer, wg *sync.WaitGroup) {
+func log(ch <-chan fmt.Stringer, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for msg := range ch {
 		fmt.Printf("%s | %s\n", time.Now().Format(time.RFC3339), msg.String())
